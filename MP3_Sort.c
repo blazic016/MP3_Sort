@@ -34,6 +34,7 @@ char **arr_files = build_array();
     sort_int(int_arr, num_files);
     check_increment_correct(int_arr, num_files);
     rename_num_to_alpha(int_arr, num_files);
+    getch();
     
 return 0;
 }
@@ -52,6 +53,7 @@ void rename_num_to_alpha(int arr[], int n) {
                 printf("[%d]\t= %s \t->\t %s\n",cnt, oldname, newname);
             } else {
                 fprintf(stderr, "EXIT PROGRAM, An error has occurred renaming %s.\n", oldname);
+                getch();
                 exit(0);
             }
             cnt++;
@@ -67,6 +69,7 @@ void check_increment_correct(int arr[], int n) {
         check = arr[i+1] - arr[i];
         if(check != 1) {
             printf("ERROR, Files not sorted increment correctly. Problem: %d.mp3\n", arr[i]);
+            getch();
             exit(0);
         }
     }
@@ -90,6 +93,7 @@ void rename_clear_numerical(char *oldname[], int n) { /*NOT USE*/
         }
         else {
             fprintf(stderr, "EXIT PROGRAM, An error has occurred renaming %s.\n", oldname[count]);
+            getch();
             exit(0);
         }
     }
