@@ -1,0 +1,6 @@
+#Directories
+Backup/*
+.vscode/*
+
+#Files
+*.mp3
